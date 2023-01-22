@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: facegrouping
+    env_file:
+      - ./.env
+    volumes:
+      - ${INPUT_DIR}:/app/input
+      - ${OUTPUT_DIR}:/app/output
+      # dev volume
+      - .:/app
