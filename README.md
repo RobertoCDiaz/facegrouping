@@ -1,6 +1,16 @@
 # Group Photos by Faces
 
-## Dependencies
+A Python script that groups images in a given folder by faces and move them to different folders based on facial recognition. The images that do not contain any face are moved to a different folder. The script uses dlib's pre-trained models for facial detection, landmark prediction and face encoding. This can be useful for organizing a large collection of images, especially if they are not named or labeled in a consistent way.
+
+## Python dependencies
+
+- numpy
+- opencv-python
+- dlib
+- face_recognition
+- shutil
+
+## Docker dependencies
 
 - Docker
 - docker-compose
@@ -24,7 +34,11 @@ TOLERANCE=0.5
 ```
 
 ## Usage
+
+### Using Docker
 Once everythin is set up, run the following command from the root directory.
 ```bash
 docker-compose up
 ```
+
+The images that contain faces will be moved to different subfolders inside the output folder, each subfolder with a specific face, and the images that do not contain faces will be moved to a folder named "no_face" inside the output folder.
